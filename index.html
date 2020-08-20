@@ -316,12 +316,16 @@
         <hr>
       </div>
       <ul id="filters">
-        <li class="filter" data-filter="eswelod">E-SWELDO</li>
-        <li class="filter" data-filter="xtibio">XTI BIO</li>
-        <li class="filter" data-filter="tidyculture">TidyCulture</li>
-        <li class="filter" data-filter="sap">SAP B1 Portal</li>
-        <li class="filter" data-filter="dal">Data Layer Access</li>
+        <li class="filter" data-filter="eswelod" onclick="changeDesk('eswelod')">E-SWELDO</li>
+        <li class="filter" data-filter="xtibio" onclick="changeDesk('xtibio')">XTI BIO</li>
+        <li class="filter" data-filter="tidyculture" onclick="changeDesk('tidyculture')">TidyCulture</li>
+        <li class="filter" data-filter="sap" onclick="changeDesk('sap')">SAP B1 Portal</li>
+        <li class="filter" data-filter="dal" onclick="changeDesk('dal')">Data Layer Access</li>
       </ul>
+      <div>
+        <p id="description">
+        </p>
+      </div>
       <ul id="projects">
         <li class="mix eswelod mix_all">
           <a href="Portfolio/Esweldo/Login.JPG" class="single-project">
@@ -348,14 +352,21 @@
           </a>
         </li>
         <li class="mix eswelod mix_all">
-          <a href="Portfolio/Esweldo/ProcessPayrollDetails.png" class="single-project">
-            <img src="Portfolio/Esweldo/ProcessPayrollDetails.png" alt="">
+          <a href="Portfolio/Esweldo/ProcessPayrollDetails.jpg" class="single-project">
+            <img src="Portfolio/Esweldo/ProcessPayrollDetails.jpg" alt="">
             <div class="overlay">
               <h3>Process Payroll Details</h3>
             </div>
           </a>
         </li>
-
+        <li class="mix eswelod mix_all">
+          <a href="Portfolio/Esweldo/Backupdb.jpg" class="single-project">
+            <img src="Portfolio/Esweldo/Backupdb.jpg" alt="">
+            <div class="overlay">
+              <h3>Database Size</h3>
+            </div>
+          </a>
+        </li>
 
         <li class="mix xtibio mix_all">
           <a href="Portfolio/XTI Bio/Terminal.JPG" class="single-project">
@@ -381,7 +392,14 @@
             </div>
           </a>
         </li>
-
+        <li class="mix xtibio mix_all">
+          <a href="Portfolio/XTI Bio/Esweldo_Integration.JPG" class="single-project">
+            <img src="Portfolio/XTI Bio/Esweldo_Integration.JPG" alt="">
+            <div class="overlay">
+              <h3>Data Management Tab</h3>
+            </div>
+          </a>
+        </li>
 
 
 
@@ -471,7 +489,7 @@
           <a href="Portfolio/SAP Portal/Approval.JPG" class="single-project">
             <img src="Portfolio/SAP Portal/Approval.JPG" alt="">
             <div class="overlay">
-              <h3>General Setup for Integration</h3>
+              <h3>Approval Page</h3>
             </div>
           </a>
         </li>
@@ -480,25 +498,17 @@
           <a href="Portfolio/SAP Portal/SalesOrder.JPG" class="single-project">
             <img src="Portfolio/SAP Portal/SalesOrder.JPG" alt="">
             <div class="overlay">
-              <h3>General Setup for Integration</h3>
+              <h3>Sales Order</h3>
             </div>
           </a>
         </li>
 
-        <li class="mix sap mix_all">
-          <a href="Portfolio/SAP Portal/SalesOrder.JPG" class="single-project">
-            <img src="Portfolio/SAP Portal/SalesOrder.JPG" alt="">
-            <div class="overlay">
-              <h3>General Setup for Integration</h3>
-            </div>
-          </a>
-        </li>
   
         <li class="mix sap mix_all">
           <a href="Portfolio/SAP Portal/Return.JPG" class="single-project">
             <img src="Portfolio/SAP Portal/Return.JPG" alt="">
             <div class="overlay">
-              <h3>General Setup for Integration</h3>
+              <h3>Return Item</h3>
             </div>
           </a>
         </li>
@@ -507,7 +517,7 @@
           <a href="Portfolio/SAP Portal/Delivery.JPG" class="single-project">
             <img src="Portfolio/SAP Portal/Delivery.JPG" alt="">
             <div class="overlay">
-              <h3>General Setup for Integration</h3>
+              <h3>Delivery Item</h3>
             </div>
           </a>
         </li>
@@ -516,7 +526,7 @@
           <a href="Portfolio/SAP Portal/GoodsReceipt.JPG" class="single-project">
             <img src="Portfolio/SAP Portal/GoodsReceipt.JPG" alt="">
             <div class="overlay">
-              <h3>General Setup for Integration</h3>
+              <h3>Goods Receipt</h3>
             </div>
           </a>
         </li>
@@ -526,7 +536,7 @@
           <a href="Portfolio/SAP Portal/Inventory Transfer.JPG" class="single-project">
             <img src="Portfolio/SAP Portal/Inventory Transfer.JPG" alt="">
             <div class="overlay">
-              <h3>General Setup for Integration</h3>
+              <h3>Inventory Transfer</h3>
             </div>
           </a>
         </li>
@@ -534,11 +544,8 @@
 
       </ul>
     </div>
-  </section> -->
+  </section>
   <!-- End Works -->
-
-
-
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -551,7 +558,6 @@
     </div>
   </footer>
   <!-- End Footer -->
-
 
   <!-- Libraries -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -567,6 +573,35 @@
 
   <!-- Main.js file -->
   <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    function changeDesk(x)
+    {
+      var desc = ""
+        switch(x)
+        {
+          case "eswelod":
+           desc = "ESWELDO Front-End is made using AngularJs, HTML 5, CSS 3, Bootstrap 4, Javascript, Jquery and Razor HTML. In Back-End the team used .NET Framework C# 4.5, ASP.NET MVC, WEB API and MSSQL as Database. E-SWELDO has 3 core system which is Payroll, HRIS, and Timekeeping(DTR). All transactions, formula, computations, are done in stored procedures. These 3 systems are fully integrated to each other aside from that. "
+           break;
+
+           case "xtibio":
+           desc = "XTI Bio is a ZKT Biometrics platform that ease the manual labor of export and import just by getting timelogs. With this system you will be able to get realtime timelogs from device to ESWELDO. It is fully integrated to ESWELDO, without manual intervention to the end user, they will be able to generate employees timelogs thru XTI Bio. They can upload manual timelogs as well. It will alow user to export the logs into text file. This system is made from C# Windows Form with ZTK SDK to fully utilize the hardware capabilities."
+           break;
+
+           case "tidyculture":
+           desc = "TidyCulture is a Productivity Tracker made from C#, ASP.NET MVC, SignalR for Admin side and C#, WPF, SignalR for Client side. This is system is very small and simple but very effective. The system has 'Peek' function which will allow the Supervisor of each Employee's to track their screen to see the progress of their task"
+           break;
+
+           case "sap":
+           desc = "SAP B1 Portal Front-End is made using AngularJs, HTML 5, CSS 3, Bootstrap 4, Javascript, Jquery and Razor HTML. In Back-End the team used .NET Framework C# 4.5, ASP.NET MVC, WEB API and MSSQL as Database. This system is fully integrated to SAP B1 just by setting up the correct parameter to connect to SAP B1 Database and Server. In this system you will be able to create core modules like Sales Order, Return Item, Delivery Item, Goods Receipt, and Inventory Transfer. This system abolish the SAP B1 licensing which 1 license is equivalent to 1 user. In here the company is free to create many users to increase the productivity of creating documents but lessen the cost by buying actual license of SAP B1 "
+           break;
+
+           case "dal":
+           desc = "JFDAL is a Data Access Layer I made using C# and ADO.NET pattern. It is my personal project at first until my whole dev team see it very useful so I made a nuget package for them. This package lessen the programmers code in every transaction they will made to database. It is converting C# object into SQL Parameter. It is returns output as datatable so it is efficient whether the programmer is using API or MVC. "
+           break;
+        }
+        document.getElementById("description").innerHTML = desc
+    }
+  </script>
 </body>
 
 
