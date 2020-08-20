@@ -117,7 +117,7 @@ $(document).ready(function(){
   $('.single-project').click(function(){    
     var image = $(this).attr('href'),
         title = $(this).find('h3').text(),    
-        project = '<div class="modal fade" id="project-modal"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button><h4 class="modal-title">' + title + '</h4></div><div class="modal-body"><img src="' + image + '" alt=""></div></div></div></div>';
+        project = '<div class="modal fade" id="project-modal"><div class="modal-dialog" style="width:90%"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button><h4 class="modal-title">' + title + '</h4></div><div class="modal-body"><img src="' + image + '" alt=""></div></div></div></div>';
     $(project).modal()
     .on('hidden.bs.modal', function () {
       $(this).remove();      

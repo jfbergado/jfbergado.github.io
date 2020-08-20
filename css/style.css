@@ -519,6 +519,7 @@ section.parallax {
   display: block;
   position: relative;
   overflow: hidden;
+
 }
 .single-project:hover .overlay {
   opacity: 1;
